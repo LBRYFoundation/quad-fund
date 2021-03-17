@@ -1,36 +1,31 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { grants } from '../sdk'
 
 export async function getStaticProps(context) {
-  const res = await fetch(`http://localhost:3000/api/apps`)
-  const data = await res.json()
-
-  if (!data) {
-    return {
-      notFound: true,
-    }
-  }
-
   return {
-    props: { apps: data.apps },
-  }}
+    props: { grants: grants() },
+  }
+}
 
-function Home({ apps }) {
+export default function Home({ grants }) {
   return (
       <div>
         <Head>
           <title>LBRY Community Funding Experiment</title>
-          <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <main className="container mx-auto">
-          <h1>LBRY Community Funding Experiment</h1>
+        <main className="container max-w-2xl mx-auto">
+          <h1 className="mb-4">LBRY Community Funding Experiment</h1>
 
-          <ul>
-            {apps.map((app) => (
-              <li key={app.url}>
-                <Link href={`/a/${app.url}`}>
-                  <a>{app.title}</a>
+          <ul className="flex space-x-2">
+            {grants.map((grant) => (
+              <li key={grant.claim_id} className="flex-auto border border-black p-4">
+                <Link href={`/grant/${grant.url}`}>
+                  <a className="cursor-pointer">
+                    <h2 className="font-bold mb-2">{grant.name}</h2>
+                    <img className="max-w-md" src={grant.thumbnail ?? "https://via.placeholder.com/300"}></img>
+                  </a>
                 </Link>
               </li>
             ))}
@@ -40,5 +35,3 @@ function Home({ apps }) {
       </div>
   )
 }
-
-export default Home

@@ -10,9 +10,11 @@
   "dependencies": {
     "autoprefixer": "^10.2.5",
     "next": "10.0.9",
+    "node-fetch": "^2.6.1",
     "postcss": "^8.2.8",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "sync-fetch": "^0.3.0",
     "tailwindcss": "^2.0.3"
   }
 }
