@@ -1,5 +1,7 @@
 # LBRY Community Funding Demo
 
+Background: [Proposal To Improve Community Funding](https://lbry.tv/@grin:4/funding-proposal:7)
+
 Built with [Next.js](https://nextjs.org/) and TailwindCSS.
 
 Install Node, Yarn, and lbrynet. Start lbrynet using
