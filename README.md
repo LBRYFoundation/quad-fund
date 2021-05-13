@@ -4,9 +4,9 @@ Background: [Proposal To Improve Community Funding](https://lbry.tv/@grin:4/fund
 
 Built with [Next.js](https://nextjs.org/) and TailwindCSS.
 
-Install Node, Yarn, and lbrynet. Start lbrynet using
+Install Node, Yarn, and [lbrynet](https://github.com/lbryio/lbry-sdk). Start lbrynet using
 
-```
+```bash
 lbrynet start
 ```
 
